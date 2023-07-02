@@ -10,7 +10,7 @@
 
     <link rel="icon" href="favicon.ico" type="image/x-icon" />
 
-    <title>:: Crush On :: Register</title>
+    <title>Register</title>
 
     <!-- Bootstrap Core and vandor -->
     @include('include.style')
