@@ -26,19 +26,14 @@
                     <div class="text-center mb-5">
                         <a class="header-brand" href="index.html"><i class="fa fa-dashboard brand-logo"></i></a>
                     </div>
-                    <div class="card-title">Create new account</div>
-                    <form action="{{ route('register') }}" method="POST">
-                        @csrf
-                        <div class="form-group">
-                            <label for="name" class="form-label">Name</label>
-                            <input type="text" name="name" id="name" class="form-control"
-                                placeholder="Enter name" value="{{ old('name') }}">
-                            @error('name')
-                                <div class="text-danger">
-                                    {{ $message }}
-                                </div>
-                            @enderror
+                    @if (session('status'))
+                        <div class="alert alert-danger">
+                            {{ session('status') }}
                         </div>
+                    @endif
+                    <div class="card-title">Create new account</div>
+                    <form action="{{ route('login') }}" method="POST">
+                        @csrf
                         <div class="form-group">
                             <label for="email" class="form-label">Email address</label>
                             <input type="email" id="email" name="email" class="form-control"
@@ -59,22 +54,12 @@
                                 </div>
                             @enderror
                         </div>
-                        <div class="form-group">
-                            <label for="password_confirmation" class="form-label">Password</label>
-                            <input type="password" name="password_confirmation" id="password_confirmation"
-                                class="form-control" placeholder="Password">
-                            @error('password_confirmation')
-                                <div class="text-danger">
-                                    {{ $message }}
-                                </div>
-                            @enderror
-                        </div>
                         <div class="form-footer">
                             <button type="submit" class="btn btn-primary btn-block">Create new account</button>
                         </div>
                 </div>
                 <div class="card-footer text-center text-muted">
-                    Already have account? <a href="{{ route('login') }}">Sign in</a>
+                    Already have account? <a href="{{ route('register') }}">Sign up</a>
                 </div>
                 </form>
             </div>

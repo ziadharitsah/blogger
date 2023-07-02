@@ -15,8 +15,8 @@
                         <a href="javascript:void(0)" class="has-arrow"><i
                                 class="icon-lock"></i><span>Authentication</span></a>
                         <ul>
-                            <li><a href="login.html">Login</a></li>
-                            <li><a href="register.html">Register</a></li>
+                            <li><a href="{{ route('login') }}">Login</a></li>
+                            <li><a href="{{ route('register') }}">Register</a></li>
                             <li><a href="forgot-password.html">Forgot password</a></li>
                             <li><a href="404.html">404 error</a></li>
                             <li><a href="500.html">500 error</a></li>

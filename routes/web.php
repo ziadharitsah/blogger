@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\Auth\LogoutController;
 use App\Http\Controllers\Auth\RegiterController;
 use App\Http\Controllers\Blog\BlogController;
 use App\Http\Controllers\Home\DashboardController;
@@ -21,6 +23,11 @@ Route::get('/', function () {
 });
 Route::get('/register', [RegiterController::class, 'index'])->name('register');
 Route::post('/register', [RegiterController::class, 'store']);
+
+Route::post('/logout', [LogoutController::class, 'store'])->name('logout');
+
+Route::get('/login', [LoginController::class, 'index'])->name('login');
+Route::post('/login', [LoginController::class, 'store']);
 
 Route::get('/app', [DashboardController::class, 'index'])->name('app');
 Route::get('/dashboard', [DashboardController::class, 'dashboard'])->name('dashboard');
